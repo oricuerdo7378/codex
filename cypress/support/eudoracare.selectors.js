@@ -46,14 +46,34 @@ export const selectors = {
 
   // User creation form selectors
   userForm: {
-    lastNameInput: 'input[id="lastname"]', // Apellidos
-    firstNameInput: 'input[formcontrolname="firstname"]', // Nombre
+    // ========== Personal Information Section ==========
+    lastNameInput: 'input[formcontrolname="lastname"]', // Apellidos - formcontrolname is lowercase
+    firstNameInput: 'input[formcontrolname="firstname"]', // Nombre - formcontrolname is lowercase
     genderSelect: 'select[formcontrolname="genderId"]', // Género dropdown
     birthDatePicker: 'app-kendo-datepicker[formcontrolname="birthDate"] input', // Fecha de nacimiento
-    birthPlaceInput: 'input[formcontrolname="birthPlace"]', // Lugar de nacimiento
-    citizenshipInput: 'input[formcontrolname="citizenship"]', // Nacionalidad
+    birthPlaceInput: 'input[formcontrolname="birthPlace"]', // Lugar de nacimiento - typeahead
+    citizenshipInput: 'input[formcontrolname="citizenship"]', // Nacionalidad - typeahead
     nationalIdInput: 'input[formcontrolname="nationalId"]', // DNI
-    confirmNationalIdCheckbox: 'input[formcontrolname="confirmNationalId"]', // He comprobado el código
+    confirmNationalIdCheckbox: 'input[formcontrolname="confirmNationalId"]', // He comprobado el código: es correcto
+
+    // ========== Contact Information Section ==========
+    emailInput: 'input[formcontrolname="email"]', // Email principal
+    
+    // Mobile Phone
+    mobilePhoneTypeSelect: 'select[formcontrolname="mobilePhoneType"]',
+    mobilePhonePrefixSelect: 'select[formcontrolname="mobilePhonePrefix"]',
+    mobilePhoneNumberInput: 'input[formcontrolname="mobilePhoneNumber"]',
+    
+    // Regular Phone
+    phoneTypeSelect: 'select[formcontrolname="phoneType"]',
+    phonePrefixSelect: 'select[formcontrolname="phonePrefix"]',
+    phoneNumberInput: 'input[formcontrolname="phoneNumber"]',
+    
+    // Address
+    addressTypeSelect: 'select[formcontrolname="addressType"]',
+    addressInput: 'input[formcontrolname="address"]',
+
+    // ========== Form Actions ==========
     nextButton: 'button:contains("Siguiente")', // Siguiente button
     cancelButton: 'button:contains("Cancelar")', // Cancelar button
   },

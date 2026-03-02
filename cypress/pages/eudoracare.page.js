@@ -225,36 +225,47 @@ class EudoracareLoginPage {
   openUserCreateDialog() {
     cy.log("Opening user creation dialog by clicking + button...")
 
-    // Try the selector with icon-name="plus" or equivalent
-    cy.get(selectors.users.createButton, { timeout: 15000 })
-      .should("exist")
-      .then(($btn) => {
-        if ($btn.length > 0) {
-          cy.log("✓ Found + button, clicking it...")
-          cy.wrap($btn).first().click({ force: true })
-        } else {
-          cy.log("⚠ + button not found, trying alternative selector...")
-          // Alternative: find any button with svg containing plus icon
-          cy.get("button[class*='svg-button']")
-            .filter((_, el) => {
-              const html = el.innerHTML || ""
-              return html.includes("plus")
-            })
-            .first()
-            .click({ force: true })
-        }
-      })
+    // Find and click the create button - try to find it with multiple strategies
+    cy.get("body", { timeout: 5000 }).then(() => {
+      cy.get(selectors.users.createButton, { timeout: 10000 })
+        .should("be.visible")
+        .click({ force: true })
+      cy.log("✓ Clicked + button")
+    })
 
-    cy.log("Waiting for loader to disappear...")
-    // Wait for spinner to disappear after clicking
-    cy.get(".fa-spinner", { timeout: 30000 }).should("not.exist")
-    cy.log("✓ Dialog loaded, spinner disappeared")
+    // Wait for dialog form to appear - check if form fields become visible
+    cy.log("Waiting for form dialog to load...")
+    cy.get(selectors.userForm.lastNameInput, { timeout: 20000 }).should("be.visible")
+    cy.log("✓ Dialog loaded, form fields are visible")
+
     return this
   }
 
   /**
    * Fill in the user creation form with basic information
    */
+  /**
+   * Fill only the firstName (Nombre) field with a pause before typing
+   */
+  fillFirstNameOnly(firstName) {
+    cy.log(`Filling firstName field: ${firstName}`)
+
+    // Wait before typing
+    cy.wait(1000)
+    cy.log("Paused before typing firstName")
+
+    // Fill firstName (Nombre) with pause
+    cy.get(selectors.userForm.firstNameInput, { timeout: 10000 })
+      .should("be.visible")
+      .clear()
+      .wait(300)
+      .type(firstName, { delay: 50 })
+      .should("have.value", firstName)
+
+    cy.log(`✓ firstName filled: ${firstName}`)
+    return this
+  }
+
   fillUserForm(firstName, lastName, gender = "1", birthDate = "01/01/1990") {
     cy.log(`Filling user form with: ${firstName} ${lastName}`)
 
