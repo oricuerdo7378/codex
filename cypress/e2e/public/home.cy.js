@@ -2,10 +2,9 @@ import home from '../../pages/home.page'
 
 describe('Home', () => {
 
-  it('carga correctamente', () => {
+  it('loads correctly', () => {
     home.visit()
     home.header().should('be.visible')
   })
 
 })
-

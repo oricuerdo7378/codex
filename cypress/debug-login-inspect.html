@@ -1,0 +1,167 @@
+<body id="top" class=""><div id="svg-icon-container-for-no-wifi" style="display: none;"><svg xmlns="http://www.w3.org/2000/svg"><symbol id="svg-icon-no-wifi" viewBox="0 0 698 698">
+        <title>no-wifi</title>
+        <g>
+            <circle cx="385.5" cy="573.55" r="79.8"></circle>
+            <path d="M511.5,291.85c-39.899-16.9-82.3-25.5-126-25.5c-44.6,0-87.899,8.9-128.6,26.6c-39.3,17-74.3,41.3-104.1,72.2l100.7,97.3
+		c34.9-36.1,81.8-56,132-56c49,0,95.101,19.1,129.8,53.8l22.7-22.7l-8.899-137.6C523.3,297.049,517.4,294.35,511.5,291.85z"></path>
+            <path d="M523.2,208.45l-4.8-74.5h166c-27.601-19-56.9-33.9-87.7-46.8c-66.9-28.1-138-42.5-211.1-42.5
+		c-73.601,0-145,14.4-212.3,42.8c-65,27.5-123.3,66.8-173.3,116.8l99,99c76.6-76.6,178.4-118.8,286.7-118.8
+		C433.2,184.55,479.601,192.75,523.2,208.45z"></path>
+            <circle cx="630.9" cy="587.15" r="58.2"></circle>
+            <polygon points="583.4,479.95 678.4,479.95 698,175.95 563.8,175.95 	"></polygon>
+        </g>
+    </symbol></svg></div>
+
+    <div style="display: none">
+        <canvas id="svgSvcServiceCanvas" width="500" height="600"></canvas>
+    </div>
+
+    <div data-ng-controller="SplashCtrl as SplashCtrl" class="full-height ng-scope">
+
+        <div id="splash-page" data-ng-show="SplashCtrl.showSplash()" class="animate-fade ng-hide" style="">
+            <div class="page-splash">
+                <div class="page-splash-wrapper">
+                    <div class="page-splash-message">
+                        Loading...
+                    </div>
+                    <div class="loader-spinner loader-spinner-splash">
+
+                        <div class="loader-spinner-inner"></div>
+                        <div class="loader-spinner-inner-rotating"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="full-height" style="width: 100%; position: fixed; top: 0; left: 0; z-index: 1200; display: none">
+
+    <div class="client-offline-container">
+
+
+        <div class="client-offline-big-icon">
+
+            <eq-icon-type icon-name="'no-wifi'" icon-implementation-type="1" class="ng-isolate-scope"><!-- ngIf: iconImplementationType == 1 --><svg class="svg-icon " ng-if="iconImplementationType == 1">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-icon-no-wifi"></use>
+    <!-- ngIf: showRedLine -->
+</svg><!-- end ngIf: iconImplementationType == 1 --></eq-icon-type>
+
+        </div>
+
+        <h1 class="client-offline-title-main"><eqi18n eqi18n="common_offlineTitle">You are offline</eqi18n></h1>
+
+        <h2 class="client-offline-title-second"><eqi18n eqi18n="common_offlineMessage">Please check your network connection.</eqi18n></h2>
+        
+    </div>
+</div>
+
+        <div data-ng-controller="AppCtrl as vm" class="full-height ng-scope">
+
+            <!-- uiView: --><div ui-view="" class="full-height ng-scope" style=""><!-- uiView: --><ui-view class="full-height ng-scope" autoscroll="false"><div class="login-wrapper ng-scope staging-environment" ng-class="vm.common.settings.generalSettings_EnvironmentCssClass">
+    <div class="login-content clearfix">
+        <div class="clearfix login-logos">
+            <eq-thumbnail-image class="logo-image-left ng-isolate-scope" source="vm.loginImage2"><div class="eq-tumbnailimage eq-tumbnailimage-container">
+    <!-- ngIf: loderVisible -->
+    <img class="eq-tumbnailimage-image" data-ng-show="imageVisible" src="/webapi/api/v1/file/getFile?id=2BFBAB23-6C76-457A-9D67-022532584EF2&amp;usage=1&amp;page=1&amp;fallback=true&amp;generate=1&amp;wait=false&amp;timeoutsec=true&amp;allowAutoReloadRequestNotification=true&amp;CNET.Cumap3.Web.SessionId=52047761318505299AF7CD1C-5A73-4980-90DD-31ED0ABAABE5&amp;CNET.Cumap3.Web.ClientAgentId=86E0B0CA-62BE-032E-0AC7-C35155B4F44A" style="">
+    <!-- ngIf: errorVisible -->
+</div>
+</eq-thumbnail-image>
+            <eq-thumbnail-image class="logo-image-right ng-isolate-scope" source="vm.loginImage1"><div class="eq-tumbnailimage eq-tumbnailimage-container">
+    <!-- ngIf: loderVisible -->
+    <img class="eq-tumbnailimage-image" data-ng-show="imageVisible" src="/webapi/api/v1/file/getFile?id=D4B23965-F0C2-4318-9362-B5E4990E98D2&amp;usage=1&amp;page=1&amp;fallback=true&amp;generate=1&amp;wait=false&amp;timeoutsec=true&amp;allowAutoReloadRequestNotification=true&amp;CNET.Cumap3.Web.SessionId=52047761318505299AF7CD1C-5A73-4980-90DD-31ED0ABAABE5&amp;CNET.Cumap3.Web.ClientAgentId=86E0B0CA-62BE-032E-0AC7-C35155B4F44A" style="">
+    <!-- ngIf: errorVisible -->
+</div>
+</eq-thumbnail-image>
+
+            <!-- ngIf: vm.common.settings.generalSettings_EnvironmentWarningText --><div class="login-text ng-binding ng-scope" ng-if="vm.common.settings.generalSettings_EnvironmentWarningText">TEST ENVIRONMENT</div><!-- end ngIf: vm.common.settings.generalSettings_EnvironmentWarningText -->
+        </div>
+        <div class="login-side-actions">
+            <button ng-show="vm.backVisible" class="general-button" ng-click="vm.backCommand()" style="">
+                <i class="fa fa-arrow-left fa-2x"></i>
+            </button>
+        </div>
+        
+        <!-- uiView: --><div ui-view="" class="clearfix ng-scope" style="">
+<!-- ngIf: childVm.mode == 'new' --><div class="login-user-block-container blue ng-scope" ng-if="childVm.mode == 'new'">
+    <span class="login-user-block-content-center login-user-block-text">
+        <eqi18n eqi18n="login_SignIn">Iniciar sesión</eqi18n>
+    </span>
+
+</div><!-- end ngIf: childVm.mode == 'new' -->
+<!-- ngIf: childVm.mode == 'existing' -->
+<!-- ngIf: childVm.mode != 'changepassword' --><div class="login-form ng-pristine ng-scope ng-invalid ng-invalid-required" ng-form="childVm.loginForm" ng-if="childVm.mode != 'changepassword'">
+  
+    <!-- ngIf: childVm.mode == 'existing' --> 
+    <!-- ngIf: childVm.mode == 'existing' -->
+
+    <!-- ngIf: childVm.mode == 'new' --><div class="cp-login-form-item form-boxed ng-scope" ng-if="childVm.mode == 'new'">
+
+        <label><eqi18n eqi18n="login_UserName">Nombre de usuario</eqi18n>:</label>
+
+        <input style="display:none" type="text" name="fakeusernameremembered1">
+        <input style="display:none" type="password" name="fakepasswordremembered1">
+
+        <!-- ngIf: childVm.useEmailUserName==false --><input ng-if="childVm.useEmailUserName==false" eq-focus-element="" focus="childVm.focusUsername" type="search" ng-model="childVm.username" required="" name="username" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" data-eq-enter-key-press="childVm.loginCommand()" class="ng-pristine ng-untouched ng-scope ng-empty ng-invalid ng-invalid-required"><!-- end ngIf: childVm.useEmailUserName==false -->
+        <!-- ngIf: childVm.useEmailUserName==true -->
+    </div><!-- end ngIf: childVm.mode == 'new' -->
+
+
+    <div class="cp-login-form-item form-boxed">
+
+        <label><eqi18n eqi18n="login_Password">Contraseña</eqi18n>: <em class="password-case-warning">(<eqi18n eqi18n="common_PasswordCaseWarning">No olvide que las contraseñas distinguen entre mayúsculas y minúsculas.</eqi18n>)</em></label>
+
+        <input style="display:none" type="text" name="fakeusernameremembered2">
+        <input style="display:none" type="password" name="fakepasswordremembered2">
+
+
+        <div class="password-toggle"><input id="passwordInput" name="password" type="password" autocomplete="new-password" required="" eq-password-reveal="" eq-focus-element="" focus="childVm.focusPassword" ng-model="childVm.password" data-eq-enter-key-press="childVm.loginCommand()" class="ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required"><a style="visibility: hidden;">Toggle</a></div>
+    </div>
+
+    <!-- ngIf: childVm.loginFormFired && (childVm.loginForm.$invalid || childVm.serverError) -->
+
+    <div class="cp-login-form-item">
+        <input type="submit" eqi18n="login_SignIn" eq-internal-busy-drct="" busy="true" value="Iniciar sesión" ng-click="childVm.loginCommand()" ng-disabled="childVm.loginFormFired &amp;&amp; childVm.loginForm.$invalid" ng-class="{'disabled':childVm.loginFormFired &amp;&amp; childVm.loginForm.$invalid}">
+        <eq-internal-busy-drct busy="childVm.isBusy" class="ng-isolate-scope"><i ng-show="busy" class="fa fa-spinner fa-spin ng-hide"></i></eq-internal-busy-drct>
+
+    </div>
+</div><!-- end ngIf: childVm.mode != 'changepassword' -->
+<!-- ngIf: childVm.mode == 'changepassword' --></div>
+
+        <div class="login-more-users-container">
+            <!-- ngIf: vm.showMoreUsers -->
+
+        </div>
+
+        <div class="cp-login-copyright fl-left ng-binding" ng-bind="vm.credits">© 2014 Soft Potential Ltd</div>
+        <!-- ngIf: !vm.isHideVersionEnabled --><div class="cp-login-link fl-right ng-scope" ng-if="!vm.isHideVersionEnabled"><eqi18n eqi18n="common_version">version</eqi18n>:&nbsp;<i class="ng-binding">1.80.2.36<!-- ngIf: vm.clientApplicationVersion != vm.applicationVersion.currentVersion --><span ng-if="vm.clientApplicationVersion != vm.applicationVersion.currentVersion" class="ng-binding ng-scope">(1.80.2.39)</span><!-- end ngIf: vm.clientApplicationVersion != vm.applicationVersion.currentVersion --></i></div><!-- end ngIf: !vm.isHideVersionEnabled -->
+    </div>
+</div></ui-view></div>
+
+
+            <div data-ng-show="vm.isBusy &amp;&amp; !SplashCtrl.showSplash()" id="mainBusyLayer" class="cu-stackable page-spinner dissolve-animation ng-hide">
+                <div class="loader-spinner app-transition-spinner">
+                    <div class="loader-spinner-inner"></div>
+                    <div class="loader-spinner-inner-rotating"></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="toast-container" ng-class="[config.position, config.animation]" style="z-index:1000" toaster-options="{'toaster-id': 1, 'time-out': 3000, 'close-button':true, 'position-class': 'toast-top-right custom-toast-top-right'}" class="toast-top-right custom-toast-top-right"><!-- ngRepeat: toaster in toasters --></div>
+
+        <div id="toast-container" ng-class="[config.position, config.animation]" style="z-index:1000" toaster-options="{'time-out': 3000, 'close-button':true, 'position-class': 'toast-bottom-full-width'}" class="toast-bottom-full-width"><!-- ngRepeat: toaster in toasters --></div>
+
+    </div>
+
+    <script src="app/jsGlobal.js"></script>
+
+    <script src="dist/scripts/lib-f699be4e92.js"></script>
+    <script>
+        var CKEDITOR_BASEPATH = '/app/scripts/ckeditor/';
+    </script>
+    <script src="scripts/ckeditor/ckeditor.js"></script>
+    <script src="scripts/radialplot.js"></script>
+
+    <script src="dist/scripts/app-745a3f1369.js"></script>
+
+
+
+</body>
